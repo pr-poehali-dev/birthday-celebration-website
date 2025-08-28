@@ -7,7 +7,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [photos, setPhotos] = useState([
-    { id: 1, url: 'https://cdn.poehali.dev/files/9cf82ba8-1552-4895-a797-ff51c16b4c90.jpg', description: 'Это наша первая прогулка в июне 24 года' },
+    { id: 1, url: 'https://cdn.poehali.dev/files/9cf82ba8-1552-4895-a797-ff51c16b4c90.jpg', description: 'Это наша первая прогулка в июне 24 года, я никогда не забуду как долго мы говорили в этот особенный день' },
     { id: 2, url: '/placeholder.svg', description: 'Незабываемые воспоминания' },
     { id: 3, url: '/placeholder.svg', description: 'Счастливые мгновения вместе' }
   ]);
