@@ -11,7 +11,8 @@ const Index = () => {
     { id: 2, url: 'https://cdn.poehali.dev/files/6fde9da9-ee4a-4e65-acb4-2bfcc8093f16.jpg', description: 'Мы стоим в бургер кинге и ждем заказ. Ты в белой рубашке с рыбами, которая мне очень нравится' },
     { id: 3, url: 'https://cdn.poehali.dev/files/c2bdbf8b-5dc2-4c44-935f-2ae17a4e29d3.jpg', description: 'Тут ты делала фотки из 2010. Тебе ОЧЕНЬ идет пучок' },
     { id: 4, url: 'https://cdn.poehali.dev/files/dcb380a6-0bd4-4335-ba1c-477cb5fb8432.jpg', description: 'Мы встретили звезду Твери - диджея Билли' },
-    { id: 5, url: 'https://cdn.poehali.dev/files/685300c6-1fd2-4e76-9b48-305c0d5198ce.jpg', description: 'Мы в РМИ пишем пожелания нашим будущим детям' }
+    { id: 5, url: 'https://cdn.poehali.dev/files/685300c6-1fd2-4e76-9b48-305c0d5198ce.jpg', description: 'Мы в РМИ пишем пожелания нашим будущим детям' },
+    { id: 6, url: 'https://cdn.poehali.dev/files/67ea5dfd-7f6a-40df-8437-c25cb0c32e59.jpg', description: 'Немного кринжа' }
   ]);
 
   const [wishes, setWishes] = useState([
