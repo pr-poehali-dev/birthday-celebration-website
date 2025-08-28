@@ -117,8 +117,9 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">🎂</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Твои любимые</h3>
-                <p className="text-gray-700">Тот самый день, когда все началось</p>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700">Твои любимые напитки</h3>
+                <p className="text-lg text-[#000154]">Я никогда не встречал человека, любимые соки которого - банановый и томатный
+(твою любовь к томатному я не пойму никогда)</p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">💝</div>
