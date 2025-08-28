@@ -123,17 +123,17 @@ const Index = () => {
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">💝</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Особенные подарки</h3>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700">Твои подарки</h3>
                 <p className="text-lg text-[#000d68]">Твои подарки всегда были наполнены любовью и теплом, но ты все равно считаешь, что не умеешь их делать(</p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">🌟</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Смех и радость</h3>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700">Твой вайб</h3>
                 <p className="text-lg text-[#0e0081]">Никто не умеет смешить так, как это делаешь ты, твоя атмосфера поднимет настроение кому угодно</p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">💕</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Будущие планы</h3>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700">Твои планы</h3>
                 <p className="text-[#000f71] text-lg">Впереди у тебя целая жизнь, ты обязательно поступишь, куда хочешь, и выйдешь замуж за любимого Даню</p>
               </Card>
             </div>
