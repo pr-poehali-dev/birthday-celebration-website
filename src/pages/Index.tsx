@@ -113,11 +113,11 @@ const Index = () => {
         {/* Memory Moments */}
         <section className="py-20 px-4 bg-gradient-to-r from-purple-100 to-pink-100">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-montserrat">Памятные моменты 💫</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-montserrat">Посмотри, какая ты особенная</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">🎂</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Первое знакомство</h3>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700">Твои любимые</h3>
                 <p className="text-gray-700">Тот самый день, когда все началось</p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
@@ -128,7 +128,7 @@ const Index = () => {
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">🌟</div>
                 <h3 className="text-2xl font-bold mb-4 text-purple-700">Смех и радость</h3>
-                <p className="text-gray-700">Моменты, которые согревают сердце</p>
+                <p className="text-lg text-[#b600a9]">Никто не умеет смешить так, как это делаешь ты</p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">💕</div>
