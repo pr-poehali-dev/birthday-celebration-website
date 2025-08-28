@@ -75,7 +75,7 @@ const Index = () => {
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
           <div className="animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 bg-clip-text text-transparent mb-6 font-montserrat">С ДНЕМ РОЖДЕНИЯ! </h1>
+            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 bg-clip-text text-transparent mb-6 font-montserrat">С ДНЕМ РОЖДЕНИЯ, ЛЮБИМАЯ!</h1>
             <p className="md:text-3xl text-purple-700 mb-8 font-medium text-4xl">Этот день особенный, потому что особенная ТЫ!</p>
             <div className="flex gap-4 text-4xl mb-8"></div>
             <Button 
