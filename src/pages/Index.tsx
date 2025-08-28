@@ -72,15 +72,9 @@ const Index = () => {
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center px-4">
           <div className="animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 bg-clip-text text-transparent mb-6 font-montserrat">
-              С ДНЕМ РОЖДЕНИЯ! 🎉
-            </h1>
-            <p className="text-2xl md:text-3xl text-purple-700 mb-8 font-medium">
-              Этот день особенный, потому что особенный ТЫ!
-            </p>
-            <div className="flex gap-4 text-4xl mb-8">
-              🎂 🎁 🎈 🎊 ✨
-            </div>
+            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 bg-clip-text text-transparent mb-6 font-montserrat">С ДНЕМ РОЖДЕНИЯ! </h1>
+            <p className="md:text-3xl text-purple-700 mb-8 font-medium text-4xl">Этот день особенный, потому что особенная ТЫ!</p>
+            <div className="flex gap-4 text-4xl mb-8"></div>
             <Button 
               className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
@@ -93,9 +87,7 @@ const Index = () => {
         {/* Photo Gallery */}
         <section id="gallery" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-montserrat">
-              Галерея воспоминаний 📸
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-montserrat">Галерея воспоминаний </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {photos.map((photo, index) => (
                 <Card key={photo.id} className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 border-0 bg-white/80 backdrop-blur-sm animate-fade-in overflow-hidden" style={{ animationDelay: `${index * 0.2}s` }}>
@@ -118,9 +110,7 @@ const Index = () => {
         {/* Memory Moments */}
         <section className="py-20 px-4 bg-gradient-to-r from-purple-100 to-pink-100">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-montserrat">
-              Памятные моменты ✨
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-montserrat"></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="text-5xl mb-4">🎯</div>
@@ -149,9 +139,7 @@ const Index = () => {
         {/* Music Playlist */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent font-montserrat">
-              Праздничный плейлист 🎵
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent font-montserrat">Праздничный плейлист </h2>
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
               <CardContent className="p-8">
                 <div className="space-y-4">
