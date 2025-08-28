@@ -10,7 +10,8 @@ const Index = () => {
     { id: 1, url: 'https://cdn.poehali.dev/files/9cf82ba8-1552-4895-a797-ff51c16b4c90.jpg', description: 'Это наша первая прогулка в июне 24 года, я никогда не забуду как долго мы говорили в этот особенный день' },
     { id: 2, url: 'https://cdn.poehali.dev/files/6fde9da9-ee4a-4e65-acb4-2bfcc8093f16.jpg', description: 'Мы стоим в бургер кинге и ждем заказ. Ты в белой рубашке с рыбами, которая мне очень нравится' },
     { id: 3, url: 'https://cdn.poehali.dev/files/c2bdbf8b-5dc2-4c44-935f-2ae17a4e29d3.jpg', description: 'Тут ты делала фотки из 2010. Тебе ОЧЕНЬ идет пучок' },
-    { id: 4, url: 'https://cdn.poehali.dev/files/dcb380a6-0bd4-4335-ba1c-477cb5fb8432.jpg', description: 'Мы встретили звезду Твери - диджея Билли' }
+    { id: 4, url: 'https://cdn.poehali.dev/files/dcb380a6-0bd4-4335-ba1c-477cb5fb8432.jpg', description: 'Мы встретили звезду Твери - диджея Билли' },
+    { id: 5, url: 'https://cdn.poehali.dev/files/685300c6-1fd2-4e76-9b48-305c0d5198ce.jpg', description: 'Мы в РМИ пишем пожелания нашим будущим детям' }
   ]);
 
   const [wishes, setWishes] = useState([
