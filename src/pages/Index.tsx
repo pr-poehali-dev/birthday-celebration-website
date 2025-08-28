@@ -114,26 +114,24 @@ const Index = () => {
         <section className="py-20 px-4 bg-gradient-to-r from-purple-100 to-pink-100">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent font-montserrat"></h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="text-5xl mb-4">🎯</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Первая встреча</h3>
-                <p className="text-gray-700">Тот магический момент, когда наши пути пересеклись и началась эта удивительная дружба.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700"></h3>
+                <p className="text-[#ca0cbd]"></p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="text-5xl mb-4">🌟</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Особые достижения</h3>
-                <p className="text-gray-700">Все те моменты, когда ты блистал и показывал, насколько ты удивительный человек.</p>
+                <div className="text-5xl mb-4"></div>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700"></h3>
+                <p className="text-gray-700"></p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="text-5xl mb-4">🎭</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Смешные истории</h3>
-                <p className="text-gray-700">Все те моменты, когда мы смеялись до слез и создавали незабываемые воспоминания.</p>
+                <div className="text-5xl mb-4"></div>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700"></h3>
+                <p className="text-gray-700"></p>
               </Card>
               <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="text-5xl mb-4">💝</div>
-                <h3 className="text-2xl font-bold mb-4 text-purple-700">Особые подарки</h3>
-                <p className="text-gray-700">Не только материальные, но и все те эмоции и радость, которые ты даришь окружающим.</p>
+                <div className="text-5xl mb-4"></div>
+                <h3 className="text-2xl font-bold mb-4 text-purple-700"></h3>
+                <p className="text-gray-700"></p>
               </Card>
             </div>
           </div>
