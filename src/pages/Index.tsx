@@ -170,9 +170,7 @@ const Index = () => {
         {/* Wishes Form */}
         <section className="py-20 px-4 bg-gradient-to-r from-yellow-100 to-pink-100">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-600 to-yellow-600 bg-clip-text text-transparent font-montserrat">
-              Пожелания и поздравления 💌
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-600 to-yellow-600 bg-clip-text text-transparent font-montserrat">Пожелания и поздравления</h2>
             
             <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
               <CardContent className="p-8">
