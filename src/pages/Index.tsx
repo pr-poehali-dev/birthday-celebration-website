@@ -172,16 +172,9 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-600 to-yellow-600 bg-clip-text text-transparent font-montserrat">Пожелания и поздравления</h2>
             
-            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
-              <CardContent className="p-8">
-                <Textarea 
-                  placeholder="Напишите ваши пожелания..."
-                  value={newWish.message}
-                  onChange={(e) => setNewWish({ ...newWish, message: e.target.value })}
-                  className="min-h-32 text-lg p-4 border-2 border-purple-200 focus:border-purple-500 resize-none w-full"
-                />
-              </CardContent>
-            </Card>
+            <div className="text-center">
+              <p className="text-3xl font-bold text-pink-600">я тебя люблю</p>
+            </div>
           </div>
         </section>
 
