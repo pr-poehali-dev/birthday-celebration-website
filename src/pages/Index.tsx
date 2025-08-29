@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,12 +26,13 @@ const Index = () => {
   const [newWish, setNewWish] = useState({ author: '', message: '' });
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   const playlist = [
     { id: 1, title: 'Happy Birthday', artist: 'Stevie Wonder', duration: '3:45', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' },
-    { id: 2, title: 'Celebration', artist: 'Kool & The Gang', duration: '4:32', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' },
-    { id: 3, title: 'Good as Hell', artist: 'Lizzo', duration: '2:59', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' },
-    { id: 4, title: 'Can\'t Stop the Feeling', artist: 'Justin Timberlake', duration: '3:56', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' }
+    { id: 2, title: 'Celebration', artist: 'Kool & The Gang', duration: '4:32', url: 'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Sevish_-__nbsp_.mp3' },
+    { id: 3, title: 'Good as Hell', artist: 'Lizzo', duration: '2:59', url: 'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3' },
+    { id: 4, title: 'Can\'t Stop the Feeling', artist: 'Justin Timberlake', duration: '3:56', url: 'https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a' }
   ];
 
   const addWish = () => {
@@ -43,13 +44,43 @@ const Index = () => {
 
   const playSong = (song) => {
     if (currentSong?.id === song.id && isPlaying) {
+      // Pause current song
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
       setIsPlaying(false);
-      setCurrentSong(null);
     } else {
+      // Stop current song if playing
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      
+      // Create new audio element
+      audioRef.current = new Audio(song.url);
+      audioRef.current.play().catch(error => {
+        console.log('Не удалось воспроизвести аудио:', error);
+      });
+      
       setCurrentSong(song);
       setIsPlaying(true);
+      
+      // Handle audio end
+      audioRef.current.onended = () => {
+        setIsPlaying(false);
+        setCurrentSong(null);
+      };
     }
   };
+
+  useEffect(() => {
+    return () => {
+      // Cleanup audio on unmount
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-yellow-100 relative overflow-hidden">
