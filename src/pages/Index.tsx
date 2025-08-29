@@ -7,7 +7,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [photos, setPhotos] = useState([
-    { id: 1, url: 'https://cdn.poehali.dev/files/8e16d552-a170-4a4b-b7b2-acbc0f426bc9.jpg', description: 'Ты со своим котом Джазом - самым милым котенком в мире' },
+    { id: 1, url: 'https://cdn.poehali.dev/files/9cf82ba8-1552-4895-a797-ff51c16b4c90.jpg', description: 'Это наша первая прогулка в июне 24 года, я никогда не забуду как долго мы говорили в этот особенный день' },
     { id: 2, url: 'https://cdn.poehali.dev/files/6fde9da9-ee4a-4e65-acb4-2bfcc8093f16.jpg', description: 'Мы стоим в бургер кинге и ждем заказ. Ты в белой рубашке с рыбами, которая мне очень нравится' },
     { id: 3, url: 'https://cdn.poehali.dev/files/c2bdbf8b-5dc2-4c44-935f-2ae17a4e29d3.jpg', description: 'Тут ты делала фотки из 2010. Тебе ОЧЕНЬ идет пучок' },
     { id: 4, url: 'https://cdn.poehali.dev/files/dcb380a6-0bd4-4335-ba1c-477cb5fb8432.jpg', description: 'Мы встретили звезду Твери - диджея Билли' },
