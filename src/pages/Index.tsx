@@ -173,7 +173,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-600 to-yellow-600 bg-clip-text text-transparent font-montserrat">Пожелания и поздравления</h2>
             
             <div className="text-center">
-              <p className="text-3xl font-bold text-pink-600">я тебя люблю</p>
+              <p className="text-3xl font-bold text-pink-600">пожелания</p>
             </div>
           </div>
         </section>
