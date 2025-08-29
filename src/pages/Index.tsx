@@ -158,7 +158,7 @@ const Index = () => {
         {/* Music Playlist */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent font-montserrat">Праздничный плейлист </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-500 to-pink-500 bg-clip-text text-transparent font-montserrat">Твои любимые песни</h2>
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
               <CardContent className="p-8">
                 <div className="space-y-4">
