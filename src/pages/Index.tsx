@@ -14,7 +14,8 @@ const Index = () => {
     { id: 5, url: 'https://cdn.poehali.dev/files/685300c6-1fd2-4e76-9b48-305c0d5198ce.jpg', description: 'Мы в РМИ пишем пожелания нашим будущим детям' },
     { id: 6, url: 'https://cdn.poehali.dev/files/51e65e9a-12d3-4dde-b059-763fea5e2bbb.jpg', description: 'Ты со своим котом Джазом - самым милым котенком в мире' },
     { id: 7, url: 'https://cdn.poehali.dev/files/93435a92-5a07-4feb-8a12-bfea19542193.jpg', description: 'Мы у меня дома, ты первый раз нарастила себе ногти, правда не те, которые хотела(' },
-    { id: 8, url: 'https://cdn.poehali.dev/files/10c786e8-5d15-4c4c-acf4-7a0dfb4835a1.jpg', description: 'Ты и твой парень Даня в кино смотрите Супермена, тогда ты немного плакала' }
+    { id: 8, url: 'https://cdn.poehali.dev/files/10c786e8-5d15-4c4c-acf4-7a0dfb4835a1.jpg', description: 'Ты и твой парень Даня в кино смотрите Супермена, тогда ты немного плакала' },
+    { id: 9, url: 'https://cdn.poehali.dev/files/9a5411e0-cf6f-4abe-b052-98f4c3ee2cac.jpg', description: 'Мы с тобой в корпусе, очень вайбовая фотка, как с обложки альбома' }
   ]);
 
   const [wishes, setWishes] = useState([
