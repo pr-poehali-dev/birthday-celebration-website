@@ -174,50 +174,14 @@ const Index = () => {
               Пожелания и поздравления 💌
             </h2>
             
-            {/* Existing wishes */}
-            <div className="space-y-6 mb-12">
-              {wishes.map((wish) => (
-                <Card key={wish.id} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                        {wish.author[0]}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-gray-800 mb-2">{wish.author}</h4>
-                        <p className="text-gray-700 leading-relaxed">{wish.message}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Add new wish form */}
             <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-center text-purple-700">Оставить поздравление</h3>
-                <div className="space-y-4">
-                  <Input 
-                    placeholder="Ваше имя"
-                    value={newWish.author}
-                    onChange={(e) => setNewWish({ ...newWish, author: e.target.value })}
-                    className="text-lg p-4 border-2 border-purple-200 focus:border-purple-500"
-                  />
-                  <Textarea 
-                    placeholder="Напишите ваши пожелания..."
-                    value={newWish.message}
-                    onChange={(e) => setNewWish({ ...newWish, message: e.target.value })}
-                    className="min-h-32 text-lg p-4 border-2 border-purple-200 focus:border-purple-500 resize-none"
-                  />
-                  <Button 
-                    onClick={addWish}
-                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  >
-                    <Icon name="Heart" size={20} className="mr-2" />
-                    Отправить поздравление
-                  </Button>
-                </div>
+                <Textarea 
+                  placeholder="Напишите ваши пожелания..."
+                  value={newWish.message}
+                  onChange={(e) => setNewWish({ ...newWish, message: e.target.value })}
+                  className="min-h-32 text-lg p-4 border-2 border-purple-200 focus:border-purple-500 resize-none w-full"
+                />
               </CardContent>
             </Card>
           </div>
