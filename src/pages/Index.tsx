@@ -29,10 +29,11 @@ const Index = () => {
   const audioRef = useRef(null);
 
   const playlist = [
-    { id: 1, title: 'Happy Birthday', artist: 'Stevie Wonder', duration: '3:45', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' },
-    { id: 2, title: 'Celebration', artist: 'Kool & The Gang', duration: '4:32', url: 'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Sevish_-__nbsp_.mp3' },
-    { id: 3, title: 'Good as Hell', artist: 'Lizzo', duration: '2:59', url: 'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3' },
-    { id: 4, title: 'Can\'t Stop the Feeling', artist: 'Justin Timberlake', duration: '3:56', url: 'https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a' }
+    { id: 1, title: 'Kerosene', artist: 'Crystal Castles', duration: '3:52', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' },
+    { id: 2, title: 'Stressed Out', artist: 'twenty one pilots', duration: '3:23', url: 'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Sevish_-__nbsp_.mp3' },
+    { id: 3, title: 'Star Shopping', artist: 'Lil Peep', duration: '2:17', url: 'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3' },
+    { id: 4, title: 'A New Kind of Love', artist: 'Frou Frou', duration: '4:01', url: 'https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a' },
+    { id: 5, title: 'Downpour (Slowed & Reverb)', artist: 'Various Artists', duration: '3:45', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-28.mp3' }
   ];
 
   const addWish = () => {
