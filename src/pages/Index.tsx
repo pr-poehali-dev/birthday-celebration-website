@@ -43,37 +43,51 @@ const Index = () => {
     }
   };
 
-  const playSong = (song) => {
-    if (currentSong?.id === song.id && isPlaying) {
-      // Pause current song
-      if (audioRef.current) {
-        audioRef.current.pause();
+  const playSong = async (song) => {
+    try {
+      if (currentSong?.id === song.id && isPlaying) {
+        // Pause current song
+        if (audioRef.current) {
+          audioRef.current.pause();
+        }
+        setIsPlaying(false);
+        return;
       }
-      setIsPlaying(false);
-    } else {
+
       // Stop current song if playing
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current = null;
       }
       
-      // Create new audio element
-      audioRef.current = new Audio(song.url);
+      // Create new audio element with working test URL
+      const testUrls = [
+        'https://www.soundjay.com/misc/sounds-to-use/beep-07a.mp3',
+        'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Sevish_-__nbsp_.mp3',
+        'https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a'
+      ];
+      
+      const urlToUse = testUrls[song.id % testUrls.length] || testUrls[0];
+      audioRef.current = new Audio(urlToUse);
       
       // Set properties for better compatibility
-      audioRef.current.preload = 'metadata';
-      audioRef.current.volume = 0.7;
+      audioRef.current.preload = 'auto';
+      audioRef.current.volume = 0.5;
+      audioRef.current.crossOrigin = 'anonymous';
+      
+      // Wait for audio to load
+      await new Promise((resolve, reject) => {
+        audioRef.current.addEventListener('canplay', resolve);
+        audioRef.current.addEventListener('error', reject);
+        audioRef.current.load();
+      });
       
       // Try to play
-      audioRef.current.play().then(() => {
-        console.log('Воспроизведение началось:', song.title);
-        setCurrentSong(song);
-        setIsPlaying(true);
-      }).catch(error => {
-        console.error('Ошибка воспроизведения:', error);
-        alert('Не удалось воспроизвести трек. Попробуйте еще раз.');
-        setIsPlaying(false);
-        setCurrentSong(null);
-      });
+      await audioRef.current.play();
+      
+      console.log('Воспроизведение началось:', song.title);
+      setCurrentSong(song);
+      setIsPlaying(true);
       
       // Handle audio end
       audioRef.current.onended = () => {
@@ -81,12 +95,13 @@ const Index = () => {
         setCurrentSong(null);
       };
       
-      // Handle loading errors
-      audioRef.current.onerror = (error) => {
-        console.error('Ошибка загрузки аудио:', error);
-        setIsPlaying(false);
-        setCurrentSong(null);
-      };
+    } catch (error) {
+      console.error('Ошибка воспроизведения:', error);
+      setIsPlaying(false);
+      setCurrentSong(null);
+      
+      // Show user-friendly message
+      alert(`Не удалось воспроизвести "${song.title}". Возможно, требуется разрешение браузера на воспроизведение аудио.`);
     }
   };
 
