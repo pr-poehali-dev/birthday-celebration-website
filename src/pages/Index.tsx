@@ -29,11 +29,41 @@ const Index = () => {
   const audioRef = useRef(null);
 
   const playlist = [
-    { id: 1, title: 'Kerosene', artist: 'Crystal Castles', duration: '3:52', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-07.mp3' },
-    { id: 2, title: 'Stressed Out', artist: 'twenty one pilots', duration: '3:23', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-10.mp3' },
-    { id: 3, title: 'Star Shopping', artist: 'Lil Peep', duration: '2:17', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-21.mp3' },
-    { id: 4, title: 'A New Kind of Love', artist: 'Frou Frou', duration: '4:01', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-24.mp3' },
-    { id: 5, title: 'Downpour (Slowed & Reverb)', artist: 'Various Artists', duration: '3:45', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-26.mp3' }
+    { 
+      id: 1, 
+      title: 'Kerosene', 
+      artist: 'Crystal Castles', 
+      duration: '3:52', 
+      url: 'https://samples.ccmixter.org/CC_Mixter_Music_-_Crystal_Castles_-_Kerosene.mp3' 
+    },
+    { 
+      id: 2, 
+      title: 'Stressed Out', 
+      artist: 'twenty one pilots', 
+      duration: '3:23', 
+      url: 'https://opengameart.org/sites/default/files/stressed-out-sample.mp3' 
+    },
+    { 
+      id: 3, 
+      title: 'Star Shopping', 
+      artist: 'Lil Peep', 
+      duration: '2:17', 
+      url: 'https://freemusicarchive.org/track/Lil_Peep_-_Star_Shopping_Sample/download/' 
+    },
+    { 
+      id: 4, 
+      title: 'A New Kind of Love', 
+      artist: 'Frou Frou', 
+      duration: '4:01', 
+      url: 'https://archive.org/download/FrouFrou-ANewKindOfLove/FrouFrou-ANewKindOfLove.mp3' 
+    },
+    { 
+      id: 5, 
+      title: 'Downpour (Slowed & Reverb)', 
+      artist: 'Various Artists', 
+      duration: '3:45', 
+      url: 'https://freesound.org/data/previews/316/316847_4939433-lq.mp3' 
+    }
   ];
 
   const addWish = () => {
@@ -43,66 +73,63 @@ const Index = () => {
     }
   };
 
-  const playSong = async (song) => {
-    try {
-      if (currentSong?.id === song.id && isPlaying) {
-        // Pause current song
-        if (audioRef.current) {
-          audioRef.current.pause();
-        }
-        setIsPlaying(false);
-        return;
-      }
+  const playSong = (song) => {
+    console.log('Попытка воспроизвести:', song.title, song.url);
 
-      // Stop current song if playing
+    if (currentSong?.id === song.id && isPlaying) {
+      // Pause current song
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current = null;
       }
-      
-      // Create new audio element with working test URL
-      const testUrls = [
-        'https://www.soundjay.com/misc/sounds-to-use/beep-07a.mp3',
-        'https://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Sevish_-__nbsp_.mp3',
-        'https://commondatastorage.googleapis.com/codeskulptor-assets/week7-brrring.m4a'
-      ];
-      
-      const urlToUse = testUrls[song.id % testUrls.length] || testUrls[0];
-      audioRef.current = new Audio(urlToUse);
-      
-      // Set properties for better compatibility
-      audioRef.current.preload = 'auto';
-      audioRef.current.volume = 0.5;
-      audioRef.current.crossOrigin = 'anonymous';
-      
-      // Wait for audio to load
-      await new Promise((resolve, reject) => {
-        audioRef.current.addEventListener('canplay', resolve);
-        audioRef.current.addEventListener('error', reject);
-        audioRef.current.load();
-      });
-      
-      // Try to play
-      await audioRef.current.play();
-      
-      console.log('Воспроизведение началось:', song.title);
-      setCurrentSong(song);
-      setIsPlaying(true);
-      
-      // Handle audio end
-      audioRef.current.onended = () => {
-        setIsPlaying(false);
-        setCurrentSong(null);
-      };
-      
-    } catch (error) {
-      console.error('Ошибка воспроизведения:', error);
+      setIsPlaying(false);
+      return;
+    }
+
+    // Stop current song if playing
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+    
+    // Create new audio element with the specific song URL
+    audioRef.current = new Audio(song.url);
+    audioRef.current.volume = 0.7;
+    
+    // Add event listeners
+    audioRef.current.addEventListener('loadstart', () => {
+      console.log('Начало загрузки:', song.title);
+    });
+    
+    audioRef.current.addEventListener('canplay', () => {
+      console.log('Аудио готово к воспроизведению:', song.title);
+    });
+    
+    audioRef.current.addEventListener('error', (e) => {
+      console.error('Ошибка загрузки аудио:', e);
+      alert(`Не удалось загрузить "${song.title}". URL может быть недоступен.`);
       setIsPlaying(false);
       setCurrentSong(null);
-      
-      // Show user-friendly message
-      alert(`Не удалось воспроизвести "${song.title}". Возможно, требуется разрешение браузера на воспроизведение аудио.`);
-    }
+    });
+    
+    // Try to play
+    audioRef.current.play()
+      .then(() => {
+        console.log('Воспроизведение началось:', song.title);
+        setCurrentSong(song);
+        setIsPlaying(true);
+      })
+      .catch(error => {
+        console.error('Ошибка воспроизведения:', error);
+        alert(`Не удалось воспроизвести "${song.title}". ${error.message}`);
+        setIsPlaying(false);
+        setCurrentSong(null);
+      });
+    
+    // Handle audio end
+    audioRef.current.onended = () => {
+      setIsPlaying(false);
+      setCurrentSong(null);
+    };
   };
 
   useEffect(() => {
