@@ -5,6 +5,31 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 
+// Компонент конфетти
+const Confetti = () => {
+  useEffect(() => {
+    const createConfetti = () => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+      confetti.style.opacity = Math.random();
+      confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+        confetti.remove();
+      }, 5000);
+    };
+
+    const interval = setInterval(createConfetti, 300);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  return null;
+};
+
 const Index = () => {
   const [photos, setPhotos] = useState([
     { id: 1, url: 'https://cdn.poehali.dev/files/9cf82ba8-1552-4895-a797-ff51c16b4c90.jpg', description: 'Это наша первая прогулка в июне 24 года, я никогда не забуду как долго мы говорили в этот особенный день' },
@@ -144,21 +169,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-yellow-100 relative overflow-hidden">
-      {/* Animated Confetti */}
-      <div className="fixed inset-0 pointer-events-none">
-        {[...Array(50)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 rounded-full opacity-80 animate-[fall_${3 + Math.random() * 4}s_linear_infinite]`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              backgroundColor: ['#FF6B6B', '#FFD93D', '#6BCBDC', '#A18ADF', '#FF8E8E'][Math.floor(Math.random() * 5)],
-              animationDelay: `${Math.random() * 2}s`,
-              transform: `rotate(${Math.random() * 360}deg)`
-            }}
-          />
-        ))}
-      </div>
+      {/* Добавляем компонент конфетти */}
+      <Confetti />
 
       {/* Floating Balloons */}
       <div className="fixed inset-0 pointer-events-none">
