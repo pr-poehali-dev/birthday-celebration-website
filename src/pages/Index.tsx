@@ -254,29 +254,17 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="space-y-4">
                   {playlist.map((song, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 transition-all duration-300 hover:scale-102 cursor-pointer" onClick={() => playSong(song)}>
+                    <div key={index} className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 transition-all duration-300">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                          <Icon 
-                            name={currentSong?.id === song.id && isPlaying ? "Pause" : "Play"} 
-                            size={20} 
-                          />
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                          {index + 1}
                         </div>
                         <div>
                           <h4 className="font-bold text-gray-800">{song.title}</h4>
                           <p className="text-gray-600">{song.artist}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-4">
-                        {currentSong?.id === song.id && isPlaying && (
-                          <div className="flex items-center gap-1">
-                            <div className="w-1 h-4 bg-purple-500 rounded animate-pulse"></div>
-                            <div className="w-1 h-6 bg-pink-500 rounded animate-pulse delay-100"></div>
-                            <div className="w-1 h-4 bg-purple-500 rounded animate-pulse delay-200"></div>
-                          </div>
-                        )}
-                        <div className="text-gray-500">{song.duration}</div>
-                      </div>
+                      <div className="text-gray-500">{song.duration}</div>
                     </div>
                   ))}
                 </div>
