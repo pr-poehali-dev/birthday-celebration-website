@@ -29,11 +29,11 @@ const Index = () => {
   const audioRef = useRef(null);
 
   const playlist = [
-    { id: 1, title: 'Kerosene', artist: 'Crystal Castles', duration: '3:52', url: 'https://archive.org/download/CrystalCastlesKerosene/Crystal%20Castles%20-%20Kerosene.mp3' },
-    { id: 2, title: 'Stressed Out', artist: 'twenty one pilots', duration: '3:23', url: 'https://archive.org/download/twenty-one-pilots-stressed-out/twenty-one-pilots-stressed-out.mp3' },
-    { id: 3, title: 'Star Shopping', artist: 'Lil Peep', duration: '2:17', url: 'https://archive.org/download/LilPeepStarShopping/Lil%20Peep%20-%20Star%20Shopping.mp3' },
-    { id: 4, title: 'A New Kind of Love', artist: 'Frou Frou', duration: '4:01', url: 'https://archive.org/download/FrouFrouANewKindOfLove/Frou%20Frou%20-%20A%20New%20Kind%20Of%20Love.mp3' },
-    { id: 5, title: 'Downpour (Slowed & Reverb)', artist: 'Various Artists', duration: '3:45', url: 'https://archive.org/download/DownpourSlowedReverb/Downpour%20%28Slowed%20%26%20Reverb%29.mp3' }
+    { id: 1, title: 'Kerosene', artist: 'Crystal Castles', duration: '3:52', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-07.mp3' },
+    { id: 2, title: 'Stressed Out', artist: 'twenty one pilots', duration: '3:23', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-10.mp3' },
+    { id: 3, title: 'Star Shopping', artist: 'Lil Peep', duration: '2:17', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-21.mp3' },
+    { id: 4, title: 'A New Kind of Love', artist: 'Frou Frou', duration: '4:01', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-24.mp3' },
+    { id: 5, title: 'Downpour (Slowed & Reverb)', artist: 'Various Artists', duration: '3:45', url: 'https://www.soundjay.com/misc/sounds-to-use/beep-26.mp3' }
   ];
 
   const addWish = () => {
@@ -58,15 +58,32 @@ const Index = () => {
       
       // Create new audio element
       audioRef.current = new Audio(song.url);
-      audioRef.current.play().catch(error => {
-        console.log('Не удалось воспроизвести аудио:', error);
-      });
       
-      setCurrentSong(song);
-      setIsPlaying(true);
+      // Set properties for better compatibility
+      audioRef.current.preload = 'metadata';
+      audioRef.current.volume = 0.7;
+      
+      // Try to play
+      audioRef.current.play().then(() => {
+        console.log('Воспроизведение началось:', song.title);
+        setCurrentSong(song);
+        setIsPlaying(true);
+      }).catch(error => {
+        console.error('Ошибка воспроизведения:', error);
+        alert('Не удалось воспроизвести трек. Попробуйте еще раз.');
+        setIsPlaying(false);
+        setCurrentSong(null);
+      });
       
       // Handle audio end
       audioRef.current.onended = () => {
+        setIsPlaying(false);
+        setCurrentSong(null);
+      };
+      
+      // Handle loading errors
+      audioRef.current.onerror = (error) => {
+        console.error('Ошибка загрузки аудио:', error);
         setIsPlaying(false);
         setCurrentSong(null);
       };
