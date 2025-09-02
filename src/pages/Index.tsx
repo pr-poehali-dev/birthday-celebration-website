@@ -9,25 +9,20 @@ import Icon from '@/components/ui/icon';
 const Confetti = () => {
   useEffect(() => {
     const createConfetti = () => {
-      // Создаем 4-6 частиц за раз для более насыщенного эффекта
-      const particleCount = Math.floor(Math.random() * 3) + 4;
-      
-      for (let i = 0; i < particleCount; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-        confetti.style.opacity = Math.random() * 0.8 + 0.2;
-        confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
-        document.body.appendChild(confetti);
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+      confetti.style.opacity = Math.random();
+      confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      document.body.appendChild(confetti);
 
-        setTimeout(() => {
-          confetti.remove();
-        }, 6000);
-      }
+      setTimeout(() => {
+        confetti.remove();
+      }, 5000);
     };
 
-    const interval = setInterval(createConfetti, 150);
+    const interval = setInterval(createConfetti, 300);
     
     return () => clearInterval(interval);
   }, []);
