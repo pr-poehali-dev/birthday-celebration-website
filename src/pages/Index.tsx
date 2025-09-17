@@ -56,38 +56,38 @@ const Index = () => {
   const playlist = [
     { 
       id: 1, 
-      title: 'Kerosene', 
-      artist: 'Crystal Castles', 
-      duration: '3:52', 
-      url: 'https://samples.ccmixter.org/CC_Mixter_Music_-_Crystal_Castles_-_Kerosene.mp3' 
+      title: 'Faster n Harder', 
+      artist: '6arelyhuman', 
+      duration: '2:45', 
+      url: 'https://samples.ccmixter.org/CC_Mixter_Music_-_6arelyhuman_-_Faster_n_Harder.mp3' 
     },
     { 
       id: 2, 
-      title: 'Stressed Out', 
-      artist: 'twenty one pilots', 
-      duration: '3:23', 
-      url: 'https://opengameart.org/sites/default/files/stressed-out-sample.mp3' 
+      title: 'Life is Fun', 
+      artist: 'Boyinaband feat. TheOdd1sOut', 
+      duration: '3:48', 
+      url: 'https://opengameart.org/sites/default/files/life-is-fun-sample.mp3' 
     },
     { 
       id: 3, 
-      title: 'Star Shopping', 
-      artist: 'Lil Peep', 
-      duration: '2:17', 
-      url: 'https://freemusicarchive.org/track/Lil_Peep_-_Star_Shopping_Sample/download/' 
+      title: 'Cruel Summer', 
+      artist: 'Bananarama', 
+      duration: '3:56', 
+      url: 'https://freemusicarchive.org/track/Bananarama_-_Cruel_Summer_Sample/download/' 
     },
     { 
       id: 4, 
-      title: 'A New Kind of Love', 
-      artist: 'Frou Frou', 
-      duration: '4:01', 
-      url: 'https://archive.org/download/FrouFrou-ANewKindOfLove/FrouFrou-ANewKindOfLove.mp3' 
+      title: 'Bugatti', 
+      artist: 'Tiga', 
+      duration: '4:12', 
+      url: 'https://archive.org/download/Tiga-Bugatti/Tiga-Bugatti.mp3' 
     },
     { 
       id: 5, 
-      title: 'Downpour (Slowed & Reverb)', 
-      artist: 'Various Artists', 
-      duration: '3:45', 
-      url: 'https://freesound.org/data/previews/316/316847_4939433-lq.mp3' 
+      title: 'night eyes', 
+      artist: 'the orion experience', 
+      duration: '3:21', 
+      url: 'https://freesound.org/data/previews/orion/night-eyes-sample.mp3' 
     }
   ];
 
